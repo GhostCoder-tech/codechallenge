@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+body {
+    height: minmax(100vh, auto);  width: minmax(100vw, 100vw);
+    font-family: 'Alata', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 120vh;
+    width: 100%;
+    display: relative;
+}
+/* this sets the header background img */
+#header-bg-img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+} .header-img {
+    height: auto;
+    width: 100%;
+}
+
+
+
+#header-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 1fr);
+    grid-gap: 10em;
+    padding: 3em;
+}
+
+#top-header {
+    align-items: center;
+    display: flex;
+    grid-column: 1/-1;
+    justify-content: space-between;
+}
+
+/* sets the desktop menu invisible */
+#menu {
+    display: none;
+}
+
+.header-vibe {
+    align-items: center;
+    border: 2px solid white;
+    color: white;
+    display: flex;
+    height: 40vh;
+    justify-content: center;
+    font-size: calc(2vw + 2em);
+    font-family: 'Josefin Slab', serif;
+    padding: 0.5em;
+    white-space: nowrap;
+}
+
+
+/* style for desktop version */
+@media only screen and (min-width: 890px) {
+    #menu-btn {
+        display: none;
+    }
+
+    #menu {
+        align-items: center;
+        display: flex;
+    }
+
+    .menu-item {
+        border: 2px solid transparent;
+        color: white;
+        cursor: pointer;
+        font-size: 88%;
+        padding: 0.8em;
+        margin: 0 0.9em;
+
+    } .menu-item:after { /* handles hover animation for menu items */
+        content: ""; 
+        display: block; 
+        margin: 0 auto; 
+        width: 50%; 
+        padding-top: 10px; 
+        border-bottom: 1px solid transparent;
+
+    } .menu-item:hover:after { /* handles hover animation for menu items */
+        content: ""; 
+        display: block; 
+        margin: 0 auto; 
+        width: 50%; 
+        padding-top: 10px; 
+        border-bottom: 1px solid white;
+        transition: 0.5s;
+    }
+
+    /* splits the header container into two parts so that header-vibe takes on part in the design layout */
+
+    #header-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* ensures header vibe takes on column part of header container */
+    .header-vibe {
+        grid-column: 1/2;
+        justify-content: start;
+    }
+}
