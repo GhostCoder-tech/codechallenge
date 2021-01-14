@@ -41,9 +41,49 @@ header {
     justify-content: space-between;
 }
 
-/* sets the desktop menu invisible */
-#menu {
-    display: none;
+ .menu {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-content {
+    border: 2px solid transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 120%;
+    padding: 0.2em;
+    margin: 0 0.7em;
+
+} .menu-content:after { /* handles hover animation for menu items */
+    content: ""; 
+    display: block; 
+    margin: 0 auto; 
+    width: 50%; 
+    padding-top: 10px; 
+    border-bottom: 1px solid transparent;
+
+} .menu-content:hover:after { /* handles hover animation for menu items */
+    content: ""; 
+    display: block; 
+    margin: 0 auto; 
+    width: 50%; 
+    padding-top: 10px; 
+    border-bottom: 1px solid white;
+    transition: 0.5s;
+}
+
+/* **************** */
+
+
+/* takes care of text in header */
+.header-text {
+   
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/-1;
 }
 
 .header-vibe {
