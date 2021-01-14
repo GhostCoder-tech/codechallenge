@@ -1,268 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 
 body {
-    height: minmax(100vh, auto);
-    width: 100vw;
-    padding: 0;
+    height: minmax(100vh, auto);  width: minmax(100vw, 100vw);
+    font-family: 'Alata', sans-serif;
     margin: 0;
-    overflow-x: hidden;
+    padding: 0;
 }
 
 header {
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    position: relative;
+    height: 120vh;
+    width: 100%;
+    display: relative;
 }
-
-/* this handles all section tags */
-section {
-    display: grid;
-    /*font-family: 'Josefin Slab', serif;*/
-    font-family: 'Alata', sans-serif;
-    font-weight: lighter;
-    justify-content: center;
-    margin-top: 25vh;
-    width: 100vw;
-}
-/* ************************* **** */
-
-/* hides all desktop related properties */
-.desktop {
-    display: none;
-}
-/* ******************************** */
-
-/* this section handles the header background */
-.header-background {
+/* this sets the header background img */
+#header-bg-img {
     height: 100%;
     width: 100%;
-    position: relative;
+    position: absolute;
+    overflow: hidden;
     z-index: -1;
 } .header-img {
     height: auto;
     width: 100%;
 }
-/* ********************************************* */
 
-/* this handles the header content container */
+
+
 #header-container {
     display: grid;
-    grid-template-columns: repeat( auto-fill, 1fr);
-    grid-template-rows: 5vh;
-    grid-auto-rows: auto;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    grid-template-columns: repeat(auto-fill, 1fr);
+    grid-gap: 10em;
+    padding: 3em;
 }
-/* ************************** */
 
-/* handles the top and botttom navigation bar */
 #top-header {
     align-items: center;
     display: flex;
     grid-column: 1/-1;
     justify-content: space-between;
-    padding: 3em;
-} #top-header > div {
-    margin: 0em 0.2em;
-    padding: 0.8em;
 }
 
- .menu {
+/* sets the desktop menu invisible */
+#menu {
+    display: none;
+}
+
+.header-vibe {
     align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-
-.menu-content {
-    border: 2px solid transparent;
+    border: 2px solid white;
     color: white;
-    cursor: pointer;
-    font-size: 120%;
-    padding: 0.2em;
-    margin: 0 0.7em;
-
-} .menu-content:after { /* handles hover animation for menu items */
-    content: ""; 
-    display: block; 
-    margin: 0 auto; 
-    width: 50%; 
-    padding-top: 10px; 
-    border-bottom: 1px solid transparent;
-
-} .menu-content:hover:after { /* handles hover animation for menu items */
-    content: ""; 
-    display: block; 
-    margin: 0 auto; 
-    width: 50%; 
-    padding-top: 10px; 
-    border-bottom: 1px solid white;
-    transition: 0.5s;
-}
-
-/* **************** */
-
-
-/* takes care of text in header */
-.header-text {
-   
-    align-self: center;
     display: flex;
+    height: 40vh;
     justify-content: center;
-    align-items: center;
-    grid-column: 1/-1;
-}
-
-.header-text > div {
-    align-items: center;
-    border: 2px solid #fff;
-    color: #fff;
-    display: flex;
-    font-size: calc(5.4vw + 0.6em);
-    justify-content: center;
-    letter-spacing: 
-    1vw;
-    padding: 0.4em;
-    
-}
-/* ************************ */
-
-/* Handles first section of the page */
-
-/* Handles content of the section */
-.section-one-container {
-    background: #fff;
-    display: inline-grid;
-    width: 80vw;
-}
-
-.section-one-img img {
-    height: auto;
-    width: 100%;
-}
-
-.section-one-text {
-    align-content: center;
-    display: grid;
-    justify-content: center;
-}
-
-.section-one-text h1 {
-    font-size: xx-large;
-    letter-spacing: 0.5vw;
+    font-size: calc(2vw + 2em);
+    font-family: 'Josefin Slab', serif;
     padding: 0.5em;
-    text-align: center;
     white-space: nowrap;
 }
 
-.section-one-text p {
-    
-    color: grey;
-    line-height: 2;
-    padding: 0 1em 0 1em;
-}
 
-/* ************************** */
+/* style for desktop version */
+@media only screen and (min-width: 890px) {
+    #menu-btn {
+        display: none;
+    }
 
+    #menu {
+        align-items: center;
+        display: flex;
+    }
 
-.section-two-container {
-    display: grid;
-    width: 100%;
-}
+    .menu-item {
+        border: 2px solid transparent;
+        color: white;
+        cursor: pointer;
+        font-size: 88%;
+        padding: 0.8em;
+        margin: 0 0.9em;
 
-.section-two-header {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding: 0 1em;
-}
+    } .menu-item:after { /* handles hover animation for menu items */
+        content: ""; 
+        display: block; 
+        margin: 0 auto; 
+        width: 50%; 
+        padding-top: 10px; 
+        border-bottom: 1px solid transparent;
 
-/* s2 means section two hence section two header-txt */
+    } .menu-item:hover:after { /* handles hover animation for menu items */
+        content: ""; 
+        display: block; 
+        margin: 0 auto; 
+        width: 50%; 
+        padding-top: 10px; 
+        border-bottom: 1px solid white;
+        transition: 0.5s;
+    }
 
-.s2-header-topic {
-    font-size: xx-large;
-    padding: 0.5em 3em;
-    margin: 1em;
-    text-align: center;
-}
+    /* splits the header container into two parts so that header-vibe takes on part in the design layout */
 
-.section-two-content {
-    display: grid;
-    grid-row-gap: 6vh;
-    justify-self: center;
-    width: 95%;
-} .s2-img-container {
-    align-self: center;
-    justify-self: center;
-    width: 90%;
-} .s2-img {
-    height: auto;
-    width: 100%;
-}
+    #header-container {
+        grid-template-columns: 1fr 1fr;
+    }
 
-.section-two-button {
-    align-self: center;
-    border: 2px solid #000;
-    cursor: pointer;
-    justify-self: center;
-    padding: 0.5em 3em;
-    margin: 1em;
-    transition: 0.3s;
-}
-
-.section-two-button:hover {
-    background: black;
-    color: white;
-}
-
-footer {
-    background: black;
-    color: white;
-    display: grid;
-    margin-top: 15vw;
-    padding: 2em 0;
-    width: 100vw;
-}
-
-footer > div, footer p{
-    justify-self: center;
-    padding: 2em 0;
-}
-
-.footer-menu > div {
-    margin: 1em;
-}
-
-.social-media-links {
-    display: flex;
-}
-
-.social-media-links img {
-    margin-right: 0.8em;
-}
-
-.icons {
-    border: 2px solid transparent;
-    color: white;
-    cursor: pointer;
-    font-size: 120%;
-    padding: 0.2em;
-    margin: 0 0.7em;
-
-} .icons:after { /* handles hover animation for menu items */
-    content: ""; 
-    display: block; 
-    padding-top: 10px; 
-    border-bottom: 1px solid transparent;
-
-} .icons:hover:after { /* handles hover animation for menu items */
-    content: ""; 
-    display: block; 
-    padding-top: 10px; 
-    border-bottom: 1px solid white;
-    transition: 0.5s;
+    /* ensures header vibe takes on column part of header container */
+    .header-vibe {
+        grid-column: 1/2;
+        justify-content: start;
+    }
 }
