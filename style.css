@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 
 body {
+    font-family: 'Josefin Slab', serif;
     height: minmax(100vh, auto);
     width: 100vw;
     padding: 0;
@@ -19,7 +20,7 @@ header {
 /* this handles all section tags */
 section {
     display: grid;
-    /*font-family: 'Josefin Slab', serif;*/
+    
     font-family: 'Alata', sans-serif;
     font-weight: lighter;
     justify-content: center;
@@ -28,6 +29,19 @@ section {
 }
 /* ************************* **** */
 
+::-webkit-scrollbar {
+    width: 25px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: purple;
+    border: 5px solid #111;
+    border-radius: 15px;
+}
 /* hides all desktop related properties */
 .desktop {
     display: none;
@@ -42,7 +56,7 @@ section {
     z-index: -1;
 } .header-img {
     height: auto;
-    width: 100%;
+    width: 100vw;
 }
 /* ********************************************* */
 
@@ -78,6 +92,26 @@ section {
     flex-direction: column;
 }
 
+.menu-edit {
+    background: black;
+    display: none;
+    height: 100vh;
+    width: 95vw;
+    overflow: hidden;
+    position: fixed;
+    top: 0; right: 0;
+}
+
+.menu-edit  .menu-logo {
+    margin-bottom: 25vh;
+}
+
+.menu-edit-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .menu-content {
     border: 2px solid transparent;
     color: white;
@@ -102,6 +136,21 @@ section {
     padding-top: 10px; 
     border-bottom: 1px solid white;
     transition: 0.5s;
+}
+
+.animate {
+    position: relative;
+    right: 0;
+    animation: into-view calc(0.15s * var(--i)) linear;
+    transition: 1s;
+} @keyframes into-view {
+    0% {
+        right: -200px;
+    }
+
+    100% {
+        right: 0;
+    }
 }
 
 /* **************** */
@@ -178,16 +227,16 @@ section {
     display: flex;
     justify-content: center;
     align-content: center;
-    padding: 0 1em;
+    
 }
 
 /* s2 means section two hence section two header-txt */
 
 .s2-header-topic {
     font-size: xx-large;
-    padding: 0.5em 3em;
-    margin: 1em;
+    margin-bottom: 1em;
     text-align: center;
+    padding: 10px 40px;
 }
 
 .section-two-content {
@@ -209,8 +258,8 @@ section {
     border: 2px solid #000;
     cursor: pointer;
     justify-self: center;
-    padding: 0.5em 3em;
-    margin: 1em;
+    margin-bottom: 1em;
+    padding: 20px;
     transition: 0.3s;
 }
 
@@ -266,3 +315,4 @@ footer > div, footer p{
     border-bottom: 1px solid white;
     transition: 0.5s;
 }
+
